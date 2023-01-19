@@ -19,6 +19,12 @@
             @Html.DisplayFor(model => model.Supplier.Name)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Supplier.Project)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Supplier.Project.FullName)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Supplier.Email)
         </dt>
         <dd class="col-sm-10">

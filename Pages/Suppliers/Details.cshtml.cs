@@ -28,7 +28,7 @@ namespace Suciu_Denisa_Camelia.Pages.Suppliers
                 return NotFound();
             }
 
-            var supplier = await _context.Supplier.FirstOrDefaultAsync(m => m.ID == id);
+            var supplier = await _context.Supplier.Include(a => a.Project).Include(a => a.ProjectforEntity).FirstOrDefaultAsync(m => m.ID == id);
 
             if (supplier == null)
             {

@@ -29,15 +29,15 @@ namespace Suciu_Denisa_Camelia.Pages.Suppliers
                 return NotFound();
             }
 
-            var supplier = await _context.Supplier.FirstOrDefaultAsync(m => m.ID == id);
+            var book = await _context.Supplier.Include(a => a.Project).Include(a => a.ProjectforEntity).FirstOrDefaultAsync(m => m.ID == id);
 
-            if (supplier == null)
+            if (Supplier == null)
             {
                 return NotFound();
             }
-            else 
+            else
             {
-                Supplier = supplier;
+                Supplier = Supplier;
             }
             return Page();
         }
@@ -48,7 +48,7 @@ namespace Suciu_Denisa_Camelia.Pages.Suppliers
             {
                 return NotFound();
             }
-            var supplier = await _context.Supplier.FirstOrDefaultAsync(m => m.ID == id);
+            var supplier = await _context.Supplier.FindAsync(id);
 
             if (supplier != null)
             {

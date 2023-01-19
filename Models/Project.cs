@@ -17,6 +17,6 @@ namespace Suciu_Denisa_Camelia.Models
                 return FirstName + " " + LastName; 
             } 
     }
-        public ICollection<Supplier>? Suppliers { get; set; }
+
     }
 }
