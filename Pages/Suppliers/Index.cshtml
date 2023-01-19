@@ -2,7 +2,7 @@
 @model Suciu_Denisa_Camelia.Pages.Suppliers.IndexModel
 
 @{
-    ViewData["Email"] = "Index";
+    ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
@@ -10,11 +10,26 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Supplier Email / Project Name:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
+ 
                 @Html.DisplayNameFor(model => model.Supplier[0].Name)
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.EmailSort">
+                @Html.DisplayNameFor(model => model.Supplier[0].Email)
                 </a>
             </th>
             <th>
@@ -44,7 +59,7 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Project)
+                @Html.DisplayFor(modelItem => item.Project.FullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Hourlyrate)

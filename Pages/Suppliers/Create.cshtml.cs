@@ -23,6 +23,7 @@ namespace Suciu_Denisa_Camelia.Pages.Suppliers
         public IActionResult OnGet()
         {
             ViewData["ProjectforEntityID"] = new SelectList(_context.Set<ProjectforEntity>(), "ID", "ProjectforEntityName");
+            ViewData["ProjectID"] = new SelectList(_context.Set<Project>(), "ID", "FullName");
             return Page();
         }
 
