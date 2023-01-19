@@ -1,0 +1,60 @@
+﻿@page
+@model Suciu_Denisa_Camelia.Pages.Suppliers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Supplier</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Supplier.Name" class="control-label"></label>
+                <input asp-for="Supplier.Name" class="form-control" />
+                <span asp-validation-for="Supplier.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supplier.Email" class="control-label"></label>
+                <input asp-for="Supplier.Email" class="form-control" />
+                <span asp-validation-for="Supplier.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supplier.Project" class="control-label"></label>
+                <input asp-for="Supplier.Project" class="form-control" />
+                <span asp-validation-for="Supplier.Project" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supplier.Hourlyrate" class="control-label"></label>
+                <input asp-for="Supplier.Hourlyrate" class="form-control" />
+                <span asp-validation-for="Supplier.Hourlyrate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Supplier.ContractDate" class="control-label"></label> 
+                <input asp-for="Supplier.ContractDate" class="form-control" /> 
+                <span asp-validation-for="Supplier.ContractDate" class="text-danger"></span>
+            </div>
+            <div class="form-group"> 
+                <label asp-for="Supplier.ProjectforEntityID" class="control-label">ProjectforEntity Name</label> 
+                <select asp-for="Supplier.ProjectforEntityID" class="form-control" asp-items="ViewBag.ProjectforEntityID"> 
+                </select> 
+                <span asp-validation-for="Supplier.ProjectforEntityID" class="text-danger"></span> 
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
