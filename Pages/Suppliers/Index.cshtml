@@ -13,7 +13,7 @@
 <form asp-page="./Index" method="get">
     <div class="form-actions no-color">
         <p>
-            Find by Supplier Email / Project Name:
+            Find by Supplier Name / Project Name:
             <input type="text" name="SearchString" value="@Model.CurrentFilter" />
             <input type="submit" value="Search" class="btn btn-primary" /> |
             <a asp-page="./Index">Back to full List</a>
@@ -24,12 +24,8 @@
     <thead>
         <tr>
             <th>
- 
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
                 @Html.DisplayNameFor(model => model.Supplier[0].Name)
-            </th>
-            <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.EmailSort">
-                @Html.DisplayNameFor(model => model.Supplier[0].Email)
                 </a>
             </th>
             <th>
@@ -37,6 +33,10 @@
                 @Html.DisplayNameFor(model => model.Supplier[0].Project)
                 </a>
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Supplier[0].Email)
+            </th>
+            <th>
             <th>
                 @Html.DisplayNameFor(model => model.Supplier[0].Hourlyrate)
             </th>

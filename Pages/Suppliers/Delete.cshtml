@@ -31,12 +31,6 @@
             @Html.DisplayFor(model => model.Supplier.Email)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Supplier.Project)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Supplier.Project)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Supplier.Hourlyrate)
         </dt>
         <dd class="col-sm-10">
@@ -45,6 +39,12 @@
         <dt class="col-sm-2"> @Html.DisplayNameFor(model => model.Supplier.ContractDate) 
         </dt>
         <dd class="col-sm-10"> @Html.DisplayFor(model => model.Supplier.ContractDate) 
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Supplier.ProjectforEntity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Supplier.ProjectforEntity.ProjectforEntityName)
         </dd>
     </dl>
     

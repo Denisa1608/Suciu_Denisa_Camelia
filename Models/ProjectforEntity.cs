@@ -5,5 +5,6 @@
         public int ID { get; set; }
         public string ProjectforEntityName { get; set; }
         public ICollection<Supplier>? Suppliers { get; set; }
+
     }
 }

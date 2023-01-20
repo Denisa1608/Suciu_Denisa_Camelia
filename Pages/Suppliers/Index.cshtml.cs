@@ -23,14 +23,14 @@ namespace Suciu_Denisa_Camelia.Pages.Suppliers
         public SupplierData SupplierD { get; set; }
         public int SupplierID { get; set; }
         public int CategoryID { get; set; }
-        public string EmailSort { get; set; }
+        public string NameSort { get; set; }
         public string ProjectSort { get; set; }
         public string CurrentFilter { get; set; }
 
         public async Task OnGetAsync(int? id, int? categoryID, string sortOrder, string searchString)
         {
 
-            EmailSort = String.IsNullOrEmpty(sortOrder) ? "email_desc" : "";
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ProjectSort = String.IsNullOrEmpty(sortOrder) ? "project_desc" : "";
            
             CurrentFilter = searchString;
@@ -43,15 +43,15 @@ namespace Suciu_Denisa_Camelia.Pages.Suppliers
             }
                 if (!String.IsNullOrEmpty(searchString))
                 {
-                    SupplierD.Suppliers = SupplierD.Suppliers.Where(s => s.Project.FirstName.Contains(searchString)
-                    || s.Project.LastName.Contains(searchString) 
-                    || s.Email.Contains(searchString));
-                }
+                SupplierD.Suppliers = SupplierD.Suppliers.Where(s => s.Project.FirstName.Contains(searchString)
+                           || s.Project.LastName.Contains(searchString)
+                           || s.Name.Contains(searchString));
+            }
                 if (id != null)
 
                 switch (sortOrder)
                 {
-                        case "email_desc": SupplierD.Suppliers = SupplierD.Suppliers.OrderByDescending(s => s.Email); break;
+                        case "name_desc": SupplierD.Suppliers = SupplierD.Suppliers.OrderByDescending(s => s.Name); break;
                         case "project_desc": SupplierD.Suppliers = SupplierD.Suppliers.OrderByDescending(s => s.Project.FullName); break;
 
                 }

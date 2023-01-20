@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Suciu_Denisa_Camelia.Data;
 
@@ -11,9 +12,10 @@ using Suciu_Denisa_Camelia.Data;
 namespace Suciu_Denisa_Camelia.Migrations
 {
     [DbContext(typeof(Suciu_Denisa_CameliaContext))]
-    partial class Suciu_Denisa_CameliaContextModelSnapshot : ModelSnapshot
+    [Migration("20230119225222_Project")]
+    partial class Project
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
