@@ -29,15 +29,15 @@ namespace Suciu_Denisa_Camelia.Pages.Suppliers
                 return NotFound();
             }
 
-            var book = await _context.Supplier.Include(a => a.Project).Include(a => a.ProjectforEntity).FirstOrDefaultAsync(m => m.ID == id);
+            var supplier = await _context.Supplier.Include(a => a.Project).Include(a => a.ProjectforEntity).FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Supplier == null)
+            if (supplier == null)
             {
                 return NotFound();
             }
             else
             {
-                Supplier = Supplier;
+                Supplier = supplier;
             }
             return Page();
         }
